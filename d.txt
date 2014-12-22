@@ -1,0 +1,7 @@
+ { include_once('mysql.php');
+    mysql_query("INSERT INTO photos (u_id,name) VALUES ('".$session_id."' , '".$actual_image_name."') ") or die('g');
+    mysql_query("UPDATE users SET img = '".$actual_image_name."' WHERE id = '".$session_id."' ")or die('k');
+    header('Location: images_up.php?id='.$session_id.'');
+    }
+    else{
+    echo "failed "; echo $n2.' '.$path.$actual_image_name;}
