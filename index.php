@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_COOKIE['id']))
+if(!isset($_COOKIE['id']))
 {
 $id = $_COOKIE['id'];
 include_once('mysql.php');
@@ -41,7 +41,7 @@ mysql_query('INSERT INTO wall (u_id,post,time) VALUES ("'.$uid.'","'.$post.'","'
     
     	    
         <form method="post" action="">
-        
+       
            
             
             <label>&nbsp;</label>
@@ -99,12 +99,9 @@ $namet = $to['f_name'].' '.$to['l_name'];}
 
 </table></section>
 </body></html>
-<?
+<?php
 
  }
 else
-header('Location: login.php');
+    header('Location: login.php');
 ?>
-
-
-
